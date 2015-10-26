@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-CRIU_VERSION = v1.7
+CRIU_VERSION = v1.7.1
 CRIU_SITE = $(call github,xemul,criu,$(CRIU_VERSION))
 CRIU_DEPENDENCIES = host-protobuf-c host-protobuf
 CRIU_LICENSE = GPLv2 (programs), LGPLv2.1 (libraries)
