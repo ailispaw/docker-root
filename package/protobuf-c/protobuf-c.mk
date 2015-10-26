@@ -4,8 +4,9 @@
 #
 ################################################################################
 
-PROTOBUF_C_VERSION = v1.0.2
-PROTOBUF_C_SITE = $(call github,protobuf-c,protobuf-c,$(PROTOBUF_C_VERSION))
+PROTOBUF_C_VERSION = 0.15
+PROTOBUF_C_SOURCE = protobuf-c-$(PROTOBUF_C_VERSION).tar.gz
+PROTOBUF_C_SITE = https://protobuf-c.googlecode.com/files
 PROTOBUF_C_DEPENDENCIES = host-protobuf-c
 HOST_PROTOBUF_C_DEPENDENCIES = host-protobuf host-pkgconf
 PROTOBUF_C_MAKE = $(MAKE1)
