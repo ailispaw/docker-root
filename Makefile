@@ -18,6 +18,11 @@ SOURCES := Dockerfile \
 	overlay/usr/bin/respawn \
 	overlay/var/db/ntp-kod \
 	overlay/init \
+	package/criu/Config.in \
+	package/criu/criu.mk \
+	package/protobuf-c/Config.in \
+	package/protobuf-c/protobuf-c.mk \
+	package/Config.in \
 	scripts/build.sh \
 	scripts/post_build.sh \
 	scripts/post_image.sh
