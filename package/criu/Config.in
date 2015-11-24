@@ -1,0 +1,11 @@
+config BR2_PACKAGE_CRIU
+	bool "criu"
+	depends on BR2_TOOLCHAIN_USES_GLIBC
+	depends on BR2_PACKAGE_PROTOBUF_C
+	help
+	  Checkpoint/Restore In Userspace
+
+	  https://criu.org/
+
+comment "criu needs an (e)glibc toolchain"
+	depends on !BR2_TOOLCHAIN_USES_GLIBC
