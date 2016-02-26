@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+#
+# Convert a timestamp from 'docker inspect' into UNIX time.
+
+from __future__ import print_function
+
+from datetime import datetime
+import sys
+from time import mktime
+
+if len(sys.argv) < 2:
+    # Deal with the 'no .Created value' case.
+    print('0')
+    sys.exit(0)
+
+stamp = sys.argv[1]
+
+if len(stamp) != 30 or not stamp.endswith("Z"):
+    print("ERROR: Input not in expected format", file=stderr)
+    sys.exit(1)
+
+d = datetime.strptime(stamp[:-4], "%Y-%m-%dT%H:%M:%S.%f")
+ts = mktime((d.year, d.month, d.day, d.hour, d.minute, d.second, -1, -1, -1))
+print(int(ts))
+sys.exit(0)
