@@ -32,7 +32,7 @@ RUN mkdir -p usr/share/bash-completion/completions && \
     chmod +x usr/share/bash-completion/bash_completion
 
 # Add Docker
-ENV DOCKER_VERSION 1.10.2
+ENV DOCKER_VERSION 1.10.3
 RUN mkdir -p usr/bin && \
     wget -qO usr/bin/docker https://github.com/ailispaw/docker/releases/download/v${DOCKER_VERSION}-stripped/docker-${DOCKER_VERSION} && \
     chmod +x usr/bin/docker && \
