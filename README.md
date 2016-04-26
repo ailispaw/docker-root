@@ -1,3 +1,9 @@
+# Deprecated!
+I won't update it any more and just leave it here.  
+So you can use it if you want, but it has been moved to https://github.com/bargees/barge.
+Thanks.
+
+
 ![DockerRoot](https://cloud.githubusercontent.com/assets/10327896/14595021/c3dd4bf4-04f0-11e6-878d-90c897462280.png)
 
 DockerRoot (formerly [RancherOS Lite](https://github.com/ailispaw/rancheros-lite)) is a lightweight Linux distribution made with [Buildroot](http://buildroot.uclibc.org/) ~~especially to run a [Docker](https://www.docker.com/) daemon as PID 1~~.
