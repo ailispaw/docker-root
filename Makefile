@@ -36,7 +36,7 @@ BUILD_CONTAINER := docker-root-built
 
 BUILT := `docker ps -aq -f name=$(BUILD_CONTAINER) -f exited=0`
 STR_CREATED := $$(docker inspect -f '{{.Created}}' $(BUILD_IMAGE) 2>/dev/null)
-IMG_CREATED := `date -j -u -f "%FT%T" "$(STR_CREATED)" +"%s" 2>/dev/null || echo 0`
+IMG_CREATED := $(shell scripts/stamptounix $(STR_CREATED))
 
 CCACHE_DIR := /mnt/sda1/ccache
 
@@ -46,7 +46,7 @@ $(TARGETS): build | output
 	docker cp $(BUILD_CONTAINER):/build/buildroot/output/images/$(@F) output/
 
 build: $(SOURCES) | .dl
-	$(eval SRC_UPDATED=$$(shell stat -f "%m" $^ | sort -gr | head -n1))
+	$(eval SRC_UPDATED=$$(shell scripts/latestmtime $^))
 	@if [ "$(SRC_UPDATED)" -gt "$(IMG_CREATED)" ]; then \
 		set -e; \
 		find . -type f -name '.DS_Store' | xargs rm -f; \
